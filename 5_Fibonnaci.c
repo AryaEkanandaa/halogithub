@@ -2,30 +2,11 @@
 #include <stdlib.h>
 #include <conio.h>
 
-void inputInt(int *var, char *instructions);
 void menuFibonacci(int *number);
 unsigned long long fibonacciIterative(int number);
 unsigned long long fibonacciRecursive( int number);
 void fibonacciResult(unsigned long long (*result)(int), int number);
 
-void inputInt(int *var, char *instructions) {
-    char buff[1024];
-    char cek;
-
-    while (1) {
-        printf("%s", instructions);
-        fflush(stdin);
-        if (fgets(buff, sizeof(buff), stdin) != NULL) {
-            if (sscanf(buff, "%d %c", var, &cek) == 1 && *var >= 0) {
-                break;
-            }
-        }
-        printf("\n\t\e[31m[]======================================[]\e[0m");
-        printf("\n\t\e[31m[] Input anda salah !                   []\e[0m");
-        printf("\n\t\e[31m[] Silahkan masukkan bilangan positif ! []\e[0m"); 
-        printf("\n\t\e[31m[]======================================[]\e[0m");
-    }
-}
 
 void intro()
 {
